@@ -1,0 +1,28 @@
+<div class="login-wrapper">
+    <form  formGroup="loginForm" class="login" (ngSubmit)="onSubmit()">
+        <section class="title">
+            <h3 class="welcome"></h3>
+            Please Sign in 
+        </section>
+        <div class="login-group">  
+            <clr-input-container>
+                <label class="clr-sr-only">Email</label>
+                <input clrInput type="email" name="email"  placeholder="Email" required ngModel>
+                <clr-control-error *ngIf="loginForm.controls['email'].errors">Ce champ est obligatoire</clr-control-error>
+            </clr-input-container>
+            <clr-password-container>
+                <label class="clr-sr-only">Password</label>
+                <input type="password" name="password" clrPassword placeholder="Password" required ngModel >
+                <clr-control-error *ngIf="loginForm.controls['password'].errors">Ce champ est obligatoire</clr-control-error>
+            </clr-password-container>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a href="javascript://" class="signup">Sign up for a Company ID</a>
+        </div>
+        <div class="alert alert-danger" role="alert" >
+            Please fill all fields.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            Invalid user or password.
+        </div>
+    </form>
+</div>
